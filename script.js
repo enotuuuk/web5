@@ -1,5 +1,5 @@
 function updatePrice() {
-  // Находим select по имени в DOM.
+
   let s = document.getElementsByName("prodType");
   let select = s[0];
   let price = 0;
@@ -11,15 +11,12 @@ function updatePrice() {
   }
   count = document.getElementById('prodCount').value;
   
-  // Скрываем или показываем радиокнопки.
   let radioDiv = document.getElementById("radios");
   radioDiv.style.display = (select.value == "3" ? "block" : "none");
- 
- // Скрываем или показываем чекбоксы.
+
   let checkDiv = document.getElementById("checkboxes");
   checkDiv.style.display = (select.value == "2" ? "block" : "none"); 
- 
- // Смотрим какая товарная опция выбрана.
+
   let priceOption = 0;
   let radios = document.getElementsByName("prodOptions");
   radios.forEach(function(radio) {
@@ -31,7 +28,6 @@ function updatePrice() {
     }
   });
 
-  // Смотрим какие товарные свойства выбраны.
   let priceProp = 0;
   let checkboxes = document.querySelectorAll("#checkboxes input");
   checkboxes.forEach(function(checkbox) {
@@ -63,21 +59,19 @@ function getPrices() {
 }
 
 window.addEventListener('DOMContentLoaded', function (event) {
-  // Скрываем радиокнопки.
+
   let radioDiv = document.getElementById("radios");
   radioDiv.style.display = "none";
   
-  // Находим select по имени в DOM.
   let s = document.getElementsByName("prodType");
   let select = s[0];
-  // Назначаем обработчик на изменение select.
+
   select.addEventListener("change", function(event) {
     let target = event.target;
     console.log(target.value);
     updatePrice();
   });
   
-  // Назначаем обработчик радиокнопок.  
   let radios = document.getElementsByName("prodOptions");
   radios.forEach(function(radio) {
     radio.addEventListener("change", function(event) {
@@ -86,8 +80,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
       updatePrice();
     });
   });
-
-    // Назначаем обработчик радиокнопок.  
+	
   let checkboxes = document.querySelectorAll("#checkboxes input");
   checkboxes.forEach(function(checkbox) {
     checkbox.addEventListener("change", function(event) {
