@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task6</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+  
+  
+  <form>
+	<div>Количество товара: </div>
+    <div>
+        <input type="text" id="prodCount" placeholder="Введите количество...">
+    </div>
+	<div>Тип товара: </div>
+    <select name="prodType">
+      <option value="1">Кабель/провод</option>
+      <option value="2">Компьютер</option>
+      <option value="3">Сервисный центр</option>
+    </select>
+    <div id="radios">
+      <label><input type="radio" name="prodOptions" value="option1"> Диагностика</label>
+      <label><input type="radio" name="prodOptions" value="option2"> Установка различного ПО</label>
+      <label><input type="radio" name="prodOptions" value="option3"> Замена комплектующих</label>
+    </div>
+    <div id="checkboxes">
+      <label><input type="checkbox" name="prop1"> Доставка</label>
+      <label><input type="checkbox" name="prop2"> Подключение</label>
+    </div>
+  </form>
+  <div> </div>
+  Стоимость: <div id="prodPrice">Стоимость</div>
+  </body>
+</html>
